@@ -51,8 +51,7 @@ public class ContasController {
     }
 
     @PutMapping("/debitar/{id}")
-    public ResponseEntity<ContaResponse> debitarSaldo(@PathVariable Long id, @RequestBody @Valid SaldoRequest debitarSaldoRequest,
-                                          UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<ContaResponse> debitarSaldo(@PathVariable Long id, @RequestBody @Valid SaldoRequest debitarSaldoRequest) {
         log.info("Cadastrando a conta.");
         ContaResponse contaResponse = contasService.debitarSaldo(debitarSaldoRequest, id);
         log.info("Debito operado com sucesso!");

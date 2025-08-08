@@ -1,10 +1,8 @@
 package com.mercadoBitcoin.livro_contas.persistences.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.mercadoBitcoin.livro_contas.DTOs.contas.request.CreateContaRequest;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,6 +10,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "contas")
 @NoArgsConstructor
@@ -34,6 +34,10 @@ public class ContasEntity {
 
     @NotNull
     private BigDecimal saldoAtivos;
+
+    @OneToMany(mappedBy = "conta", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<AtivosEntity> ativos = new ArrayList<>();
 
     public ContasEntity(CreateContaRequest request) {
         this.clientName = request.nome();
