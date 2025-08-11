@@ -61,12 +61,12 @@ public class AtivosController {
 //        return ResponseEntity.ok(contaResponse);
 //    }
 //
-//    @PutMapping("/ativo/{id}")
-//    public ResponseEntity<ContaResponse> atualizarAtivo(@PathVariable Long id, @RequestBody @Valid SaldoRequest debitarSaldoRequest,
-//                                                        UriComponentsBuilder uriBuilder) {
-//        log.info("Cadastrando a conta.");
-//        ContaResponse contaResponse = ativosService.atualizarAtivo(debitarSaldoRequest, id);
-//        log.info("Debito operado com sucesso!");
-//        return ResponseEntity.ok(contaResponse);
-//    }
+    @PutMapping("/{id}")
+    public ResponseEntity<AtivosResponse> atualizarAtivo(@PathVariable Long id, @RequestBody @Valid CreateAtivoRequest updateAtivoRequest,
+                                                        UriComponentsBuilder uriBuilder) {
+        log.info("Atualizando o ativo.");
+        AtivosResponse ativosResponse = ativosService.updateAtivo(updateAtivoRequest, id);
+        log.info("Debito operado com sucesso!");
+        return ResponseEntity.ok(ativosResponse);
+    }
 }
