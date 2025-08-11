@@ -6,6 +6,6 @@ import com.mercadoBitcoin.livro_contas.persistences.entities.ContasEntity;
 public class ContaPresenter {
 
     public static ContaResponse toResponse(ContasEntity entity) {
-        return new ContaResponse(entity.getId(), entity.getClientName(), entity.getSaldo(), entity.getSaldoAtivos());
+        return new ContaResponse(entity.getId(), entity.getClientName(), entity.getSaldo(), entity.getSaldoAtivos(), entity.getAtivos());
     }
 }
