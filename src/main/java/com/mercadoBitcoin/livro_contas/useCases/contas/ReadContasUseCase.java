@@ -1,6 +1,6 @@
 package com.mercadoBitcoin.livro_contas.useCases.contas;
 
-import com.mercadoBitcoin.livro_contas.exceptions.ContaNotFoundException;
+import com.mercadoBitcoin.livro_contas.exceptions.custom.ContaNotFoundException;
 import com.mercadoBitcoin.livro_contas.persistences.entities.ContasEntity;
 import com.mercadoBitcoin.livro_contas.persistences.repositories.contas.ContasRepository;
 import lombok.extern.slf4j.Slf4j;

@@ -9,6 +9,8 @@ import com.mercadoBitcoin.livro_contas.useCases.ativos.ReadAtivoUseCase;
 import com.mercadoBitcoin.livro_contas.useCases.ativos.UpdateAtivoUseCase;
 import com.mercadoBitcoin.livro_contas.useCases.contas.UpdateContasUseCase;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -50,5 +52,11 @@ public class AtivosService {
         updateContasUseCase.atualizarSaldoAtivos(ativos.getConta());
 
         return AtivoPresenter.toResponse(ativos);
+    }
+
+    public Page<AtivosResponse> findAll(Pageable page, Long contaId) {
+
+        log.info("Entrou no servico de busca de todos os ativos disponiveis para venda.");
+        return readAtivoUseCase.findAllAtivosVenda(page, contaId).map(AtivoPresenter::toResponse);
     }
 }

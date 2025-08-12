@@ -3,7 +3,6 @@ package com.mercadoBitcoin.livro_contas.services.contas;
 import com.mercadoBitcoin.livro_contas.DTOs.contas.request.CreateContaRequest;
 import com.mercadoBitcoin.livro_contas.DTOs.contas.request.SaldoRequest;
 import com.mercadoBitcoin.livro_contas.DTOs.contas.response.ContaResponse;
-import com.mercadoBitcoin.livro_contas.exceptions.ContaNotFoundException;
 import com.mercadoBitcoin.livro_contas.presenters.contas.ContaPresenter;
 import com.mercadoBitcoin.livro_contas.useCases.contas.CreateContasUseCase;
 import com.mercadoBitcoin.livro_contas.useCases.contas.ReadContasUseCase;

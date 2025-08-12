@@ -1,4 +1,4 @@
-package com.mercadoBitcoin.livro_contas.exceptions;
+package com.mercadoBitcoin.livro_contas.exceptions.custom;
 
 public class AtivoUpdateNotPermitException extends RuntimeException {
 
