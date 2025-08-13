@@ -7,7 +7,7 @@ A arquitetura dessa demo seguiu o padrão de micro-serviços REST, dada a baixa
 complexidade exigida na proposta do projeto, que não justificava o uso da 
 Clean Architecture. Utilizei o padrão Model-View-Controller (MVC) separando as 
 camadas de visualização, orquestradores e regras de negócio da aplicação, alem
-disso, apliquei os 5 principios do SOLID para proporcionar um código mais inde-
+disso, apliquei os 5 principios do SOLID para proporcionar um código mais inde
 pendente, com responsabilidades bem definicas, fácil de expandir e de manter.
 Implementei também mensagens de erro customizadas, bem mais amigáveis que um 
 stacktrace da JVM, alem de logs para facilitar no Troubleshooting.
@@ -26,7 +26,7 @@ Github
 Explicando o projeto:
 
 Junto do código fonte há 2 arquivos importantes, o Dockerfile, necessário para o
-build e run do projeto em container e uma postman collection, fornecida para agi-
+build e run do projeto em container e uma postman collection, fornecida para agi
 lizar os testes funcionais.
 
 Há 2 maneiras de rodar o projeto, são elas:
@@ -45,15 +45,15 @@ Após instalado, faça o download e instalação do Docker Desktop em:
 Com ambos os softwares instalados, navegue pelo prompt de comando até o diretório
 raiz do projeto, onde há um arquivo chamado "Dockerfile" e execute o comando:
 
-"docker build -t mbtest/mercadobitcointest:1.0 ."
+"docker build t mbtest/mercadobitcointest:1.0 ."
 
 Esse comando fará o download das imagens da jdk / jre descritos no Dockerfile,
-assim como as demais dependencias que serão necesárias para a construção do pro-
+assim como as demais dependencias que serão necesárias para a construção do pro
 jeto.
 Importante: Esse processo pode demorar um tempo devido ao tempo de download das
 imagens do dockerhub e de resolução das dependencias do Maven.
 
-Agora, com tudo baixado e todas as layers executadas, é hora de efetetivar a su-
+Agora, com tudo baixado e todas as layers executadas, é hora de efetetivar a su
 bida do projeto, execute o comando a seguir para conseguir testa-lo no navegador, no
 postman, ou em qualquer outra ferramenta de mesma finalidade (curl, Inmsonia,
 Bruno).
@@ -67,7 +67,7 @@ Em sua ide favorita, faça um clone do projeto pelo Github na url a seguir:
 
 Depois, aguarde o maven instalar todas as suas dependencias, caso o Maven não
 inicie automaticamente, abra o terminal da sua IDE ou mesmo o prompt de comando
-e altere o diretório para o diretório onde voce baixou o projeto e digite o co-
+e altere o diretório para o diretório onde voce baixou o projeto e digite o co
 mando:
 
 "mvn -U clean install"
@@ -102,13 +102,13 @@ GET - Recupera o ativo fornecido no Request Param.
 POST - Cria um novo ativo, todos os atributos do Request Body são obrigatórios
 e são validados nas Use Cases. É necessário possuir uma conta já criada para
 vincular este ativo àquela conta informada no "Request Body".
-PUT - É permitido alterar as propriedades de nome do ativo e valores neste mó-
+PUT - É permitido alterar as propriedades de nome do ativo e valores neste mó
 dulo, não sendo possível alterar seu "owner", "dono", a conta a qual esse ativo
 é vinculada.
 
 Para Livros de ordens:
 
-GET - Busca todos os ativos disponíveis para compra. Esses ativos seguem a se-
+GET - Busca todos os ativos disponíveis para compra. Esses ativos seguem a se
 guinte regra:
 Um ativo é disponível para compra se está vinculado a uma conta diferente da
 conta a qual queremos comprar o ativo.
@@ -150,7 +150,7 @@ dos ativos e vincule-os as contas.
 verá que os ativos que são dessa conta não serão mostrados, troque de "contaId"
 e veja os resultados.
 Em comprar ativo, se atente ao "Request Param" ele é o id da conta compradora.
-No "Request Body" há apenas um atributo, chamado ativoId, nele deve ser forneci-
+No "Request Body" há apenas um atributo, chamado ativoId, nele deve ser forneci
 do o id do ativo que quer efetivar a transferencia, ao término da operação, uma
 Response será enviada ao usuário contendo a Conta do Comprador atualizada com
 o saldo, saldo de ativos e lista de ativos.
